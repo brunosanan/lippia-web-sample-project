@@ -12,12 +12,6 @@ public class GoogleSearchSteps extends PageSteps {
         GoogleHomeService.navegarWeb();
     }
 
-    @Given("^The client isn't on google page$")
-    public void isNotHome() {
-        GoogleHomeService.navegarWeb();
-        throw new RuntimeException("the client is not on google page");
-    }
-
     @When("^The client search for word (.*)$")
     public void search(String criteria) {
         GoogleHomeService.enterSearchCriteria(criteria);
