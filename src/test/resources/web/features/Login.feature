@@ -14,18 +14,18 @@ Scenario: Login manual exitoso
 
 @loginFallido
 Scenario Outline: Login manual fallido por <causa_fallo>
-    When Hago click en el boton "Log in manually"
-    When Ingreso el mail <mail> y contraseña <password>
+    When Hago click en el boton Log in manually
+    And Ingreso el mail <mail> y contraseña <password>
     And hago click en el boton de login
     Then la aplicacion muestra un ensaje de error: <mensaje>
 
 Examples:
-|mail			    | password				| mensaje							| causa_fallo 				        |
-|x@mail.com 		| xxxxx					|usuario y/o contraseña incorrecta 	| contraseña incorrecta             |
-|xxxxxxxxxxx		| xxxxxx 				|usuario y/o contraseña incorrecta 	| usuario incorrecto                |
-|xxxxxxxxxxx		| 		 				|debe ingresar usuario y contraseña | contraseña incompleta             |
-|       			|xxxxxxxxxxx 			|debe ingresar usuario y contraseña | usuario incompleto                |
-|		        	| 		 				|debe ingresar usuario y contraseña | usuario y contraseña incompleta   |
+|mail			            | password				| mensaje							| causa_fallo 				        |
+|cossetimaximo53@gmail.com  | xxxxx					|usuario y/o contraseña incorrecta 	| contraseña incorrecta             |
+|xxxxxxxxxxx		        | xxxxxx 				|usuario y/o contraseña incorrecta 	| usuario incorrecto                |
+|xxxxxxxxxxx		        | 		 				|debe ingresar usuario y contraseña | contraseña incompleta             |
+|       			        |xxxxxxxxxxx 			|debe ingresar usuario y contraseña | usuario incompleto                |
+|		        	        | 		 				|debe ingresar usuario y contraseña | usuario y contraseña incompleta   |
 
 
 
