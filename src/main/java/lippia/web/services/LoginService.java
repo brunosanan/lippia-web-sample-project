@@ -3,6 +3,8 @@ package lippia.web.services;
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.LoginConstants;
+import org.testng.Assert;
+
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
 public class LoginService{
@@ -24,6 +26,13 @@ public class LoginService{
         WebActionManager.click(LoginConstants.LOGIN_BUTTON);
     }
 
+    public static void verifyErrorMessage(String error){    //CONSULTAR
+        //WebActionManager.isPresent(WebActionManager.getText(xpath));
+        Assert.assertEquals(error, WebActionManager.getText(LoginConstants.ERROR_MESSAGE));
+    }
 
+    public static void verifyCredentialError(String error) {
 
+        Assert.assertEquals(error, WebActionManager.getText(LoginConstants.INVALID_CREDENTIALS_ERROR));
+    }
 }

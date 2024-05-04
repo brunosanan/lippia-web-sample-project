@@ -36,4 +36,14 @@ public class LoginSteps extends PageSteps {
     public void accedoAlAreaDeUsuarioRegistrado() {
         TrackerService.verifyLogIn();
     }
+
+    @Then("^la aplicacion muestra un mensaje de error: (.*)$") //CONSULTAR
+    public void verificoMensajeDeError(String errorMessage) {
+        LoginService.verifyErrorMessage(errorMessage);
+    }
+
+    @Then("^muestra el error (.*)$")
+    public void muestraElErrorInvalidEmailOrPassword(String error) {
+        LoginService.verifyCredentialError(error);
+    }
 }
