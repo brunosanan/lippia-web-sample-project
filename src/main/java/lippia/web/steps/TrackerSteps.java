@@ -14,5 +14,9 @@ public class TrackerSteps extends PageSteps {
         TrackerService.goWorkSpacePage();
     }
 
+    @And("voy a la pantalla de proyectos")
+    public void voyALaPantallaDeProyectos() {
+        TrackerService.goProjectPage();
+    }
 
 }

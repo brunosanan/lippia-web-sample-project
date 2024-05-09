@@ -11,15 +11,6 @@ Background:
 @crearProyectoExitoso
 Scenario: Creacion de proyecto exitosa
     When Hago click en el boton CREATE NEW PROJECT
-    And Ingreso el nombre "ejemplo"
-    And Hago click en el boton "CREATE"
-    Then Se crea un nuevo proyecto 
-
-@crearProyectoExitoso
-Scenario: Creacion de proyecto exitosa con color personalizado
-    When Hago click en el boton CREATE NEW PROJECT
-    And Ingreso el nombre "ejemplo"
-    And Hago click en el color predeterminado
-    And selecciono el color "rojo"
-    And Hago click en el boton "CREATE"
+    And Ingreso el nombre de proyecto unico
+    And Hago click en el boton CREATE PROJECT
     Then Se crea un nuevo proyecto

@@ -12,6 +12,6 @@ Background:
 @crearWorkspaceExitoso
 Scenario: Creacion de workspace exitosa
     When Hago click en el boton CREATE NEW WORKSPACE
-    And Ingreso el nombre ejemplo
-    And Hago click en el boton CREATE
+    And Ingreso el nombre de workspace unico
+    And Hago click en el boton CREATE WORKSPACE
     Then Se crea un nuevo workspace
