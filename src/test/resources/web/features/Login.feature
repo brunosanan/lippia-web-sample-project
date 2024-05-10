@@ -13,17 +13,27 @@ Scenario: Login manual exitoso
 
 @loginFallido
 Scenario Outline: Login manual fallido por <causa_fallo>
-    And Ingreso el mail <mail> y contraseña <password>
+    And Ingreso el mail <mail> y contraseña xxxxxx
     And hago click en el boton de login
     Then muestra el error <causa_fallo>
 
 Examples:
-| mail			                | password				| causa_fallo                           |
-| bruno.sanandres04@gmail.com   | xxxxxx				| This account doesn't have a password. |
-| cossetimaximo53@gmail.com 	| xxxxxx 				| Invalid email or password             |
-| x@mail.com                 	| xxxxxx 				| Invalid email or password             |
+| mail			                | causa_fallo                           |
+| bruno.sanandres04@gmail.com   | This account doesn't have a password. |
+| cossetimaximo53@gmail.com 	| Invalid email or password             |
+| x@mail.com                 	| Invalid email or password             |
 
+@loginFallido @test
+Scenario Outline: Login manual fallido por formato invalido del mail
+    And Ingreso el mail <mail> y contraseña xxxxxx
+    Then muestra el mail error <causa_fallo>
 
+Examples:
+| mail		| causa_fallo               |
+|           | Email is required         |
+| x         | Email format is not valid |
+| x@gmail	| Email format is not valid |
+| @mail.com | Email format is not valid |
 
 
 

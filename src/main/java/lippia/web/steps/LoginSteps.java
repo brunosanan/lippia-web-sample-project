@@ -52,4 +52,9 @@ public class LoginSteps extends PageSteps {
     public void hagoClickFueraDeLosInputs() {
         LoginService.clickOut();
     }
+
+    @Then("^muestra el mail error (.*)$")
+    public void muestraElMailErrorCausa_fallo(String errorMessage) {
+        LoginService.verifyMailErrorMessage(errorMessage);
+    }
 }

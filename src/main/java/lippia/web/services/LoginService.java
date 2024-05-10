@@ -18,16 +18,27 @@ public class LoginService{
     }
 
     public static void inputDatos(String mail, String password){
-        System.out.println(mail+ "    " + password);
-        WebActionManager.setInput(LoginConstants.MAIL_INPUT, mail);
-        WebActionManager.setInput(LoginConstants.PASSWORD_INPUT, password);
+        if (mail.isEmpty()) {
+            WebActionManager.setInput(LoginConstants.MAIL_INPUT, "x");
+            WebActionManager.setInput(LoginConstants.MAIL_INPUT, "", false, true);
+        }
+        else{
+            WebActionManager.setInput(LoginConstants.MAIL_INPUT, mail);
+        }
+        if (password.isEmpty()) {
+            WebActionManager.setInput(LoginConstants.PASSWORD_INPUT, "x");
+            WebActionManager.setInput(LoginConstants.PASSWORD_INPUT, "", false, true);
+        }
+        else{
+            WebActionManager.setInput(LoginConstants.PASSWORD_INPUT, password);
+        }
     }
 
     public static void goTrackerPage(){
         WebActionManager.click(LoginConstants.LOGIN_BUTTON);
     }
 
-    public static void verifyErrorMessage(String error){    //CONSULTAR
+    public static void verifyErrorMessage(String error){
         //WebActionManager.isPresent(WebActionManager.getText(xpath));
         Assert.assertEquals(error, WebActionManager.getText(LoginConstants.ERROR_MESSAGE));
     }
@@ -39,5 +50,10 @@ public class LoginService{
 
     public static void clickOut() {
         WebActionManager.click(LoginConstants.VIEW_PASSWORD);
+    }
+
+    public static void verifyMailErrorMessage(String error) {
+        System.out.println(WebActionManager.getText(LoginConstants.MAIL_ERROR_MESSAGE));
+        Assert.assertEquals(error, WebActionManager.getText(LoginConstants.MAIL_ERROR_MESSAGE));
     }
 }
