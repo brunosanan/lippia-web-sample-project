@@ -11,9 +11,11 @@ public class LoginConstants {
 
     public static final String ERROR_MESSAGE= "xpath://span[@class = 'cl-invalid-feedback cl-block cl-mt-0 ng-star-inserted']";
     public static final String MAIL_ERROR_MESSAGE= "xpath://span[@class='cl-invalid-feedback cl-block cl-mt-0 ng-tns-c128-2 ng-star-inserted']";
-
+    public static final String PASSWORD_ERROR_MESSAGE = "xpath://span[@class='cl-invalid-feedback cl-block cl-mt-0 ng-star-inserted']" ;
 
     public static final String INVALID_CREDENTIALS_ERROR = "xpath://span[@data-cy='error']";
 
     public static final String VIEW_PASSWORD = "xpath://img[@alt='Show password']";
+
+
 }

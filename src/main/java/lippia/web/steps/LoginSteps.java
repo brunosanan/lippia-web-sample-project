@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import jdk.jpackage.internal.Log;
+import lippia.web.constants.LoginConstants;
 import lippia.web.services.LoginService;
 import lippia.web.services.TrackerService;
 
@@ -40,7 +41,7 @@ public class LoginSteps extends PageSteps {
 
     @Then("^la aplicacion muestra un mensaje de error: (.*)$") //CONSULTAR
     public void verificoMensajeDeError(String errorMessage) {
-        LoginService.verifyErrorMessage(errorMessage);
+        LoginService.verifyErrorMessage(errorMessage, LoginConstants.ERROR_MESSAGE);
     }
 
     @Then("^muestra el error (.*)$")
@@ -55,6 +56,11 @@ public class LoginSteps extends PageSteps {
 
     @Then("^muestra el mail error (.*)$")
     public void muestraElMailErrorCausa_fallo(String errorMessage) {
-        LoginService.verifyMailErrorMessage(errorMessage);
+        LoginService.verifyErrorMessage(errorMessage, LoginConstants.MAIL_ERROR_MESSAGE);
     }
-}
+
+    @Then("^muestra el password error (.*)$")
+    public void muestraElPasswordErrorCausa_fallo(String errorMessage) {
+        LoginService.verifyErrorMessage(errorMessage, LoginConstants.PASSWORD_ERROR_MESSAGE);
+        }
+        }

@@ -1,4 +1,4 @@
-@login
+@login @test
 Feature: Login
 
 Background:
@@ -23,7 +23,7 @@ Examples:
 | cossetimaximo53@gmail.com 	| Invalid email or password             |
 | x@mail.com                 	| Invalid email or password             |
 
-@loginFallido @test
+@loginFallido
 Scenario Outline: Login manual fallido por formato invalido del mail
     And Ingreso el mail <mail> y contraseña xxxxxx
     Then muestra el mail error <causa_fallo>
@@ -34,6 +34,18 @@ Examples:
 | x         | Email format is not valid |
 | x@gmail	| Email format is not valid |
 | @mail.com | Email format is not valid |
+
+
+@loginFallido @test
+Scenario Outline: Login manual fallido por formato invalido del mail
+    And Ingreso el mail x@gmai.com y contraseña <password>
+    And hago click fuera de los inputs
+    Then muestra el password error <causa_fallo>
+
+Examples:
+| password	| causa_fallo           |
+|           | Password is required  |
+| xxxxx     | Password is not valid |
 
 
 
