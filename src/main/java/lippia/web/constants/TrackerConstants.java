@@ -10,4 +10,8 @@ public class TrackerConstants {
     public static final String LOGOUT_BUTTON = "xpath://a[normalize-space()='Log out']";
 
     public static final String PROJECT_BUTTON = "xpath://img[@alt='View Projects']";
+
+    public static final String WORKSPACE_SETTINGS = "xpath://a[@role='button']";
+
 }
+

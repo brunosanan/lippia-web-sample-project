@@ -1,14 +1,16 @@
 package lippia.web.services;
 
+import com.crowdar.core.PageSteps;
 import com.crowdar.core.actions.WebActionManager;
+import lippia.web.constants.TrackerConstants;
 import lippia.web.constants.WorkspaceConstants;
 import org.testng.Assert;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 
-
-public class WorkspaceService {
+public class WorkspaceService extends PageSteps {
 
 
     public static void goCreateWorkspacePage(){
@@ -26,5 +28,19 @@ public class WorkspaceService {
     public static void verifyWorkspace(String name) {
         WebActionManager.waitPresence(WorkspaceConstants.CREATED_WORKSPACE, name);
         Assert.assertTrue(WebActionManager.isPresent(WorkspaceConstants.CREATED_WORKSPACE, name));
+    }
+
+    public static void modifyName(String name) {
+        WebActionManager.setInput(WorkspaceConstants.INPUT_MODIFY_WORKSPACE_NAME, name, false, true);
+
+    }
+
+    public static void clickOutOfInput() {
+        WebActionManager.click(TrackerConstants.AVATAR);
+    }
+
+    public static void verifyNameChanged(String name) {
+        WebActionManager.waitClickable(WorkspaceConstants.INPUT_MODIFY_WORKSPACE_NAME);
+        Assert.assertEquals(WebActionManager.getText(WorkspaceConstants.WORKSPACE_NAME), name);
     }
 }

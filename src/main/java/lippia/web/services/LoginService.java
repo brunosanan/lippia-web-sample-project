@@ -18,6 +18,7 @@ public class LoginService{
     }
 
     public static void inputDatos(String mail, String password){
+        System.out.println(mail+ "    " + password);
         WebActionManager.setInput(LoginConstants.MAIL_INPUT, mail);
         WebActionManager.setInput(LoginConstants.PASSWORD_INPUT, password);
     }
@@ -32,7 +33,11 @@ public class LoginService{
     }
 
     public static void verifyCredentialError(String error) {
-
+        WebActionManager.waitClickable(LoginConstants.LOGIN_BUTTON);
         Assert.assertEquals(error, WebActionManager.getText(LoginConstants.INVALID_CREDENTIALS_ERROR));
+    }
+
+    public static void clickOut() {
+        WebActionManager.click(LoginConstants.VIEW_PASSWORD);
     }
 }

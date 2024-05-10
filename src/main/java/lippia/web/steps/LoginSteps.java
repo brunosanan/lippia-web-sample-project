@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import jdk.jpackage.internal.Log;
 import lippia.web.services.LoginService;
 import lippia.web.services.TrackerService;
 
@@ -45,5 +46,10 @@ public class LoginSteps extends PageSteps {
     @Then("^muestra el error (.*)$")
     public void muestraElErrorInvalidEmailOrPassword(String error) {
         LoginService.verifyCredentialError(error);
+    }
+
+    @And("hago click fuera de los inputs")
+    public void hagoClickFueraDeLosInputs() {
+        LoginService.clickOut();
     }
 }

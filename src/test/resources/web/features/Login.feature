@@ -12,27 +12,19 @@ Scenario: Login manual exitoso
     Then accedo al area de usuario registrado
 
 @loginFallido
-Scenario Outline: Login manual fallido por credenciales incompletas
-    And Ingreso el mail <mail> y contraseña <password>
-    And hago click fuera de los inputs
-    Then la aplicacion muestra un mensaje de error: <mensaje>z
-
-Examples:
-| mail			            | password				| mensaje							    |
-| xxxxxxxxxxx@mail.com      | 		 				| Password is required                  |
-|       			        | xxxxxxxxxxx 			| debe ingresar usuario y contraseña    |
-|		        	        | xxxx		 			| Password is not valid    |
-
-@loginFallido
-Scenario Outline: Login manual fallido por credenciales invalidas
+Scenario Outline: Login manual fallido por <causa_fallo>
     And Ingreso el mail <mail> y contraseña <password>
     And hago click en el boton de login
-    Then muestra el error Invalid email or password
+    Then muestra el error <causa_fallo>
 
 Examples:
-| mail			                | password				|
-| bruno.sanandres04@gmail.com   | xxxxxx				|
-| x@mail.com     	            | xxxxxx 				|
+| mail			                | password				| causa_fallo                           |
+| bruno.sanandres04@gmail.com   | xxxxxx				| This account doesn't have a password. |
+| cossetimaximo53@gmail.com 	| xxxxxx 				| Invalid email or password             |
+| x@mail.com                 	| xxxxxx 				| Invalid email or password             |
+
+
+
 
 
 

@@ -18,4 +18,9 @@ public class TrackerService {
     public static void goProjectPage() {
         WebActionManager.click(TrackerConstants.PROJECT_BUTTON);
     }
+
+    public static void goWorkSpaceSettingsPage() {
+        WebActionManager.click(TrackerConstants.WORKSPACE_SELECTOR);
+        WebActionManager.click(TrackerConstants.WORKSPACE_SETTINGS);
+    }
 }

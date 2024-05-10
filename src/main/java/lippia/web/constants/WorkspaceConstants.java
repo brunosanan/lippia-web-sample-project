@@ -7,7 +7,13 @@ public class WorkspaceConstants {
 
     public static final String INPUT_WORKSPACE_NAME = "xpath://input";
 
+    public static final String INPUT_MODIFY_WORKSPACE_NAME = "xpath://input[@id='workspaceName']";
+
     public static final String CREATE_BUTTON = "xpath://button[@class='cl-btn cl-btn-primary']";
 
     public static final String CREATED_WORKSPACE = "xpath://span[contains(text(), '%s')]";
+
+    public static final String WORKSPACE_NAME = "xpath://p[@class='cl-cut-text cl-my-0']";
+
+
 }

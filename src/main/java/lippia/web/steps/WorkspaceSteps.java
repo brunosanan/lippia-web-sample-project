@@ -8,7 +8,6 @@ import lippia.web.services.WorkspaceService;
 
 import java.time.Instant;
 
-
 public class WorkspaceSteps extends PageSteps {
     private String name;
 
@@ -16,7 +15,6 @@ public class WorkspaceSteps extends PageSteps {
     public void hagoClickEnElBotonCREATENEWWORKSPACE() {
         WorkspaceService.goCreateWorkspacePage();
     }
-
 
     @And("Ingreso el nombre de workspace unico")
     public void ingresoElNombre() {
@@ -34,4 +32,19 @@ public class WorkspaceSteps extends PageSteps {
         WorkspaceService.verifyWorkspace(this.name);
     }
 
+    @When("Modifico el nombre del workspace")
+    public void modificoElNombreDelWorkspace() {
+        this.name = "Workspace" + Instant.now().getEpochSecond();
+        WorkspaceService.modifyName(this.name);
+    }
+
+    @And("Hago click fuera del input")
+    public void hagoClickFueraDelInput() {
+        WorkspaceService.clickOutOfInput();
+    }
+
+    @Then("Se actualiza el nombre del workspace")
+    public void seActualizaElNombreDelWorkspace() {
+        WorkspaceService.verifyNameChanged(this.name);
+    }
 }
