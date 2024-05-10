@@ -34,7 +34,7 @@ public class WorkspaceSteps extends PageSteps {
 
     @When("Modifico el nombre del workspace")
     public void modificoElNombreDelWorkspace() {
-        this.name = "Workspace" + Instant.now().getEpochSecond();
+        this.name = "Modifiedx" + Instant.now().getEpochSecond();
         WorkspaceService.modifyName(this.name);
     }
 

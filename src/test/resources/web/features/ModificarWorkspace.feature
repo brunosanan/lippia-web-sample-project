@@ -6,6 +6,9 @@ Background:
   When Hago click en el boton Log in manually
   And Ingreso el mail cossetimaximo53@gmail.com y contraseña tortugamaritima1234
   And hago click en el boton de login
+  When Hago click en el boton CREATE NEW WORKSPACE
+  And Ingreso el nombre de workspace unico
+  And Hago click en el boton CREATE WORKSPACE
   And voy a la pantalla de workspaces settings
 
 @modificarWorkspaceExitoso

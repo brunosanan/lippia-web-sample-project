@@ -1,4 +1,4 @@
-@login @test
+@login
 Feature: Login
 
 Background:
@@ -36,7 +36,7 @@ Examples:
 | @mail.com | Email format is not valid |
 
 
-@loginFallido @test
+@loginFallido
 Scenario Outline: Login manual fallido por formato invalido del mail
     And Ingreso el mail x@gmai.com y contraseña <password>
     And hago click fuera de los inputs

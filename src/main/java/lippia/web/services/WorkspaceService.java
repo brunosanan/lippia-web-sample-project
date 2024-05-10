@@ -31,8 +31,9 @@ public class WorkspaceService extends PageSteps {
     }
 
     public static void modifyName(String name) {
-        WebActionManager.setInput(WorkspaceConstants.INPUT_MODIFY_WORKSPACE_NAME, name, false, true);
-
+        //WebActionManager.setInput(WorkspaceConstants.INPUT_MODIFY_WORKSPACE_NAME, name, false, true);
+        WebActionManager.setInput(WorkspaceConstants.INPUT_MODIFY_WORKSPACE_NAME, "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
+        WebActionManager.setInput(WorkspaceConstants.INPUT_MODIFY_WORKSPACE_NAME, name);
     }
 
     public static void clickOutOfInput() {
@@ -40,7 +41,7 @@ public class WorkspaceService extends PageSteps {
     }
 
     public static void verifyNameChanged(String name) {
-        WebActionManager.waitClickable(WorkspaceConstants.INPUT_MODIFY_WORKSPACE_NAME);
-        Assert.assertEquals(WebActionManager.getText(WorkspaceConstants.WORKSPACE_NAME), name);
+        TrackerService.goWorkSpacePage();
+        verifyWorkspace(name);
     }
 }

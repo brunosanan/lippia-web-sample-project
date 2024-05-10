@@ -1,4 +1,4 @@
-@crearWorkspace
+@crearWorkspace @test
 Feature: CrearWorkspace
 
 Background:
