@@ -28,4 +28,6 @@ public class GoogleSearchSteps extends PageSteps {
     public void statVerification() {
         GoogleSearchResultService.verifyResults();
     }
+
+
 }
