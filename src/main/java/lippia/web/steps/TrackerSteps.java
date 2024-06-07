@@ -4,10 +4,11 @@ import com.crowdar.core.PageSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java8.Tr;
 import lippia.web.services.TrackerService;
 
 public class TrackerSteps extends PageSteps {
-    String descripcionUnica;
+    private String descripcionUnica;
 
     @And("Hago click en el boton de manual mode")
     public void hagoClickEnElBotonDeManualMode() {
@@ -42,5 +43,6 @@ public class TrackerSteps extends PageSteps {
 
     @Then("Se agrega un tiempo de trabajo nuevo")
     public void seAgregaUnTiempoDeTrabajoNuevo() {
+        TrackerService.verifyTimeTracked(this.descripcionUnica);
     }
 }

@@ -12,3 +12,4 @@ Scenario: Registro de horas exitoso
     And Ingreso la fecha 28/06/2024
     And Hago click en el boton ADD
     Then Se agrega un tiempo de trabajo nuevo
+
