@@ -12,11 +12,15 @@ public class TrackerService {
     }
 
     public static String generateUniqueDescription() {
+        System.out.println("-?");
         return "Description" + Instant.now().getEpochSecond();
+
     }
 
     public static void inputDescription(String description) {
+
         WebActionManager.setInput(TrackerConstants.INPUT_DESCRIPTION, description);
+
     }
 
     public static void inputStartHour(String hour) {
@@ -45,5 +49,19 @@ public class TrackerService {
     public static void verifyTimeTracked(String name) {
         WebActionManager.waitPresence(TrackerConstants.TIME_TRACKED, name);
         Assert.assertTrue(WebActionManager.isPresent(TrackerConstants.TIME_TRACKED, name));
+    }
+
+    public static void verifyTimeNotTracked(String name) {
+        Assert.assertFalse(WebActionManager.isPresent(TrackerConstants.TIME_TRACKED, name));
+    }
+
+
+
+    public static void goProjectPage() {
+        WebActionManager.click(TrackerConstants.PROJECT_BUTTON);
+    }
+
+    public static void goTrackerPage() {
+        WebActionManager.click(TrackerConstants.TRACKER_BUTTON);
     }
 }

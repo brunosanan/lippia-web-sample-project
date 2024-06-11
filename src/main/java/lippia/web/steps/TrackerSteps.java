@@ -45,4 +45,19 @@ public class TrackerSteps extends PageSteps {
     public void seAgregaUnTiempoDeTrabajoNuevo() {
         TrackerService.verifyTimeTracked(this.descripcionUnica);
     }
+
+    @And("salgo de la pestaña de TRACKER")
+    public void salgoDeLaPestañaDeTRACKER() {
+        TrackerService.goProjectPage();
+    }
+
+    @And("vuelvo a ingresar a la pestaña TRACKER")
+    public void vuelvoAIngresarALaPestañaTRACKER() {
+        TrackerService.goTrackerPage();
+    }
+
+    @Then("No se agrega un tiempo de trabajo nuevo")
+    public void noSeAgregaUnTiempoDeTrabajoNuevo() {
+        TrackerService.verifyTimeNotTracked(this.descripcionUnica);
+    }
 }

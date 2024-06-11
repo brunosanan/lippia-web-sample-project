@@ -15,4 +15,8 @@ public class TrackerConstants {
 
     public static final String TIME_TRACKED = "xpath://*[contains(text(),'%s')]";
 
+    public static final String PROJECT_BUTTON = "xpath://img[@alt='View Projects']";
+    public static final String TRACKER_BUTTON = "xpath://span[contains(text(),'TIME TRACKER')]";
+
+
 }
