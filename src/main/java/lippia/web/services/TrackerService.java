@@ -44,8 +44,6 @@ public class TrackerService {
     public static void clickADDSTARTButton() {
         WebActionManager.waitVisibility(TrackerConstants.ADD_START_BUTTON);
         WebActionManager.click(TrackerConstants.ADD_START_BUTTON);
-
-        System.out.println("------------------------------------------------- boton add");
     }
 
     public static void clickDISCARDButton() {
@@ -76,7 +74,6 @@ public class TrackerService {
     public static void confirmDiscard() {
         WebActionManager.waitVisibility(TrackerConstants.CONFIRM_DISCARD_TEXT);
         WebActionManager.click(TrackerConstants.CONFIRM_DISCARD_BUTTON);
-        System.out.println("------------------------------------------------- boton discard 2");
     }
 
     public static void viewMoreOptions(){
